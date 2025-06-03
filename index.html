@@ -10,9 +10,7 @@
    
 </head>
 <body>
-    <a href="http://127.0.0.1:5500/code%20du%20site%20qr%20code%20linktree/index.html" class="site-logo">
-        <img src="photos/cacpb-logo-blanc-fond-transparent.png" alt="Logo" />
-    </a>
+    <img src="photos/cacpb-logo-blanc-fond-transparent.png" alt="Logo" class="site-logo" />
     <div class="card-container">
         <div class="header">
             <div class="profile-image" id="profileImage">
@@ -87,7 +85,7 @@
                 linkedin: "https://www.linkedin.com/in/alexandre-lopere-303b3a294/",
                 phone: "+33 6 45 82 92 54",
                 facebook: "https://www.facebook.com/cpb.agglo/?locale=fr_FR",
-                photo: "photos/téléchargé.jpg",
+                photo: "",
                 color: "#4facfe"
             }
         };
@@ -150,16 +148,26 @@
             }
         }
         function generateVCard(profile) {
-            return `BEGIN:VCARD
+            let vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${profile.name}
 ORG:${profile.name}
 TITLE:${profile.title || ""}
 EMAIL:${profile.email || ""}
 TEL:${profile.phone || ""}
-URL; TYPE=Website https://www.coulommierspaysdebrie.fr/
-URL;TYPE=FormulaireCACPB:https://www.coulommierspaysdebrie.fr/formulaire-de-contact-autre-service/
-END:VCARD`;
+URL:https://www.coulommierspaysdebrie.fr/
+URL;TYPE=WORK:https://www.coulommierspaysdebrie.fr/formulaire-de-contact-autre-service/
+`;
+
+            if (profile.linkedin) {
+                vcard += `URL;TYPE=LinkedIn:${profile.linkedin}\n`;
+            }
+            if (profile.facebook) {
+                vcard += `URL;TYPE=Facebook:${profile.facebook}\n`;
+            }
+
+            vcard += `END:VCARD`;
+            return vcard;
         }
 
         document.addEventListener('DOMContentLoaded', function() {

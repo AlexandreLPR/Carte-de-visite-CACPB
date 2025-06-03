@@ -131,16 +131,19 @@ padding: 10px 15% 8px 15%;
 .site-logo {
     position: fixed;
     top: 24px;
-    right: 24px;   
+    right: 24px;
     left: unset;
     z-index: 100;
     display: flex;
     align-items: center;
+    height: 48px;      /* Ajoute cette ligne */
+    width: auto;       /* Ajoute cette ligne */
 }
-.site-logo img { 
-    height: 90px;
+
+.site-logo {
+    /* plus besoin de .site-logo img car c'est déjà une image */
+    height: 100px;      /* Taille réduite du logo sur desktop */
     width: auto;
-    display: block;
 }
 
 @media (max-width: 480px) {
@@ -167,11 +170,10 @@ padding: 10px 15% 8px 15%;
 }
 .site-logo {
     top: 10px;
-    right: 10px;  
+    right: 10px;
     left: unset;
-}
-.site-logo img {
-    height: 110px; 
+    height: 100px;  /* Taille réduite du logo sur mobile */
+    width: auto;
 }
 }
 
