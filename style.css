@@ -136,13 +136,12 @@ padding: 10px 15% 8px 15%;
     z-index: 100;
     display: flex;
     align-items: center;
-    height: 48px;      /* Ajoute cette ligne */
-    width: auto;       /* Ajoute cette ligne */
+    height: 48px;     
+    width: auto;       
 }
 
 .site-logo {
-    /* plus besoin de .site-logo img car c'est déjà une image */
-    height: 100px;      /* Taille réduite du logo sur desktop */
+    height: 100px;      
     width: auto;
 }
 
@@ -172,7 +171,7 @@ padding: 10px 15% 8px 15%;
     top: 10px;
     right: 10px;
     left: unset;
-    height: 100px;  /* Taille réduite du logo sur mobile */
+    height: 100px;  
     width: auto;
 }
 }
