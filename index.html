@@ -153,10 +153,12 @@
             return `BEGIN:VCARD
 VERSION:3.0
 FN:${profile.name}
-ORG:${profile.company || ""}
+ORG:${profile.name}  // Nom et prénom à la place de l'entreprise
 TITLE:${profile.title || ""}
 EMAIL:${profile.email || ""}
 TEL:${profile.phone || ""}
+Site:https://www.coulommierspaysdebrie.fr/
+NOTE:Formulaire de contact CACPB : https://www.coulommierspaysdebrie.fr/formulaire-de-contact-autre-service/
 END:VCARD`;
         }
 

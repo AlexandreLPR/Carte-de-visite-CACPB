@@ -9,7 +9,7 @@ body {
     min-width: 100vw;
     height: 100dvh;
     width: 100vw;
-    background: linear-gradient(135deg, #00ad81 30%, #39bd9c 100%);
+    background: linear-gradient(140deg, #00ad81 8%, #50e2be 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,12 +131,14 @@ padding: 10px 15% 8px 15%;
 .site-logo {
     position: fixed;
     top: 24px;
-    left: 24px;
+    right: 24px;   
+    left: unset;
     z-index: 100;
     display: flex;
     align-items: center;
 }
 .site-logo img { 
+    height: 90px;
     width: auto;
     display: block;
 }
@@ -165,10 +167,11 @@ padding: 10px 15% 8px 15%;
 }
 .site-logo {
     top: 10px;
-    left: 10px;
+    right: 10px;  
+    left: unset;
 }
 .site-logo img {
-    height: 90px; 
+    height: 110px; 
 }
 }
 
