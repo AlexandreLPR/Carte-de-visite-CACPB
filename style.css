@@ -9,7 +9,7 @@ body {
     min-width: 100vw;
     height: 100dvh;
     width: 100vw;
-    background-image: linear-gradient(  160deg, #00ad81 0%, #3cbab4 80%);
+    background-image: linear-gradient(  180deg, #00ad81 0%, #3dd6c2 95%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,7 +165,7 @@ padding: 10px 15% 8px 15%;
     width: 100%;
     max-width: 420px;
     height: 77px;
-    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
 }
 
 .fixed-add-contact button:hover,
