@@ -104,10 +104,12 @@ padding: 10px 15% 8px 15%;
     display: flex;
     flex-direction: row;
     gap: 18px;
-    justify-content: center;
+    justify-content: flex-end;   /* réseaux à droite */
     margin: 16px 0 0 0;
     align-items: center;
+    width: 100%;
 }
+
 .social-link {
     width: 45px;
     height: 45px;
@@ -132,49 +134,18 @@ padding: 10px 15% 8px 15%;
     position: fixed;
     top: 24px;
     right: 24px;
-    left: unset;
     z-index: 100;
-    display: flex;
-    align-items: center;
-    height: 48px;      /* Ajoute cette ligne */
-    width: auto;       /* Ajoute cette ligne */
-}
-
-.site-logo {
-    /* plus besoin de .site-logo img car c'est déjà une image */
-    height: 100px;      /* Taille réduite du logo sur desktop */
+    height: 100px;   
     width: auto;
+    left: unset;  
 }
 
 @media (max-width: 480px) {
-.card-container {
-    width: 100vw;
-    min-height: 100dvh;
-    border-radius: 0;
-    margin: 0;
-}
-.header {
-    padding: 22px 8px 12px 8px;
-}
-.content {
-    padding: 10px 6% 8px 6%; 
-}
-.action-button {
-    width: 100%;
-    max-width: 400px;
-    margin: 12px 0;
-}
-.social-links {
-    gap: 16px;
-    justify-content: end;
-}
-.site-logo {
-    top: 10px;
-    right: 10px;
-    left: unset;
-    height: 100px;  /* Taille réduite du logo sur mobile */
-    width: auto;
-}
+    .site-logo {
+        top: 10px;
+        right: 10px;
+        height: 100px;  
+    }
 }
 
 .action-button:hover,
@@ -182,4 +153,33 @@ padding: 10px 15% 8px 15%;
 .social-link:hover,
 .social-link:focus {
     transform: scale(1.02);
+}
+.bottom-actions {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    padding-bottom: 18px;
+    background: transparent;
+}
+
+#addContactBtn {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 1.08rem;
+}
+
+/* Pour mobile : bouton bien collé en bas */
+@media (max-width: 600px) {
+    .bottom-actions {
+        padding-bottom: 8px;
+    }
+    #addContactBtn {
+        max-width: 80vw;
+        font-size: 1.08rem;
+    }
 }
