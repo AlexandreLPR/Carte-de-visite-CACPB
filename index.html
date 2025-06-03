@@ -45,6 +45,12 @@
             <div class="social-links" id="socialLinks"></div>
         </div>
     </div>
+    <div class="fixed-add-contact">
+  <button id="addContactBtnFixed" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" x2="19" y1="8" y2="14"></line><line x1="22" x2="16" y1="11" y2="11"></line></svg>
+    Ajouter le contact
+  </button>
+</div>
     <script>
         const defaultProfile = {
             name: "Jean Dupont",
@@ -186,24 +192,25 @@ URL;TYPE=Formulaire CACPB:https://www.coulommierspaysdebrie.fr/formulaire-de-con
 
         document.addEventListener('DOMContentLoaded', function() {
             loadProfile();
+            const addContactBtnFixed = document.getElementById('addContactBtnFixed');
+            if (addContactBtnFixed) {
+                addContactBtnFixed.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const profileId = getUrlParameter('id') || getUrlParameter('profile');
+                    const profile = profiles[profileId] || defaultProfile;
+                    const vcardData = generateVCard(profile);
+                    const blob = new Blob([vcardData], { type: 'text/vcard' });
+                    const url = URL.createObjectURL(blob);
 
-            const addContactBtn = document.getElementById('addContactBtn');
-            addContactBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const profileId = getUrlParameter('id') || getUrlParameter('profile');
-                const profile = profiles[profileId] || defaultProfile;
-                const vcardData = generateVCard(profile);
-                const blob = new Blob([vcardData], { type: 'text/vcard' });
-                const url = URL.createObjectURL(blob);
-
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `${profile.name.replace(/\s+/g, '_')}.vcf`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            });
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${profile.name.replace(/\s+/g, '_')}.vcf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                });
+            }
         });
     </script>
 </body>

@@ -132,17 +132,55 @@ padding: 10px 15% 8px 15%;
     position: fixed;
     top: 24px;
     right: 24px;
-    left: unset;
     z-index: 100;
-    display: flex;
-    align-items: center;
-    height: 48px;     
-    width: auto;       
+    height: 100px;
+    width: auto;
 }
 
-.site-logo {
-    height: 100px;      
-    width: auto;
+.fixed-add-contact {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding: 0 16px;
+    background: transparent; 
+}
+
+.fixed-add-contact button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.08rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 12px;
+    padding: 0 32px;
+    width: 100%;
+    max-width: 420px;
+    height: 77px;
+}
+
+.fixed-add-contact button:hover,
+.fixed-add-contact button:focus,
+.action-button:hover,
+.action-button:focus,
+.social-link:hover,
+.social-link:focus {
+    transform: scale(1.02);
+}
+
+.fixed-add-contact svg {
+    margin-right: 15px;
+    width: 28px;
+    height: 28px;
 }
 
 @media (max-width: 480px) {
@@ -170,15 +208,17 @@ padding: 10px 15% 8px 15%;
 .site-logo {
     top: 10px;
     right: 10px;
-    left: unset;
     height: 100px;  
-    width: auto;
 }
+.fixed-add-contact {
+    height: 68px;
+    padding: 0 4px;
 }
-
-.action-button:hover,
-.action-button:focus,
-.social-link:hover,
-.social-link:focus {
-    transform: scale(1.02);
+.fixed-add-contact button {
+    max-width: 85vw;
+    height: 50px;
+    font-size: 1.07rem;
+    padding: 0 12px;
+    font-family: 'Inter', Arial, sans-serif;
+}
 }
